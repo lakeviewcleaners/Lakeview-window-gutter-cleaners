@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lakeview Window and Gutter Cleaners</title>
+  <meta name="description" content="Lakeview Window and Gutter Cleaners — Window and gutter cleaning in Minocqua, WI. Family-owned. Call 802-730-0548." />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Lakeview Window &amp; Gutter Cleaners</h1>
+        <p class="tagline">We keep your view as pristine as possible — family-owned in Minocqua, WI.</p>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Crystal clear windows. Clean, healthy gutters.</h2>
+          <p>Fast, friendly, and reliable window & gutter cleaning for homes and small businesses in Minocqua and nearby areas.</p>
+          <a class="cta" href="#contact">Get a Free Quote</a>
+        </div>
+        <div class="hero-info">
+          <div class="contact-card">
+            <p class="muted">Call or text</p>
+            <p class="phone">802-730-0548</p>
+            <p class="muted">Email</p>
+            <p class="email">lakeviewcleaners@outlook.com</p>
+            <p class="muted">Serving</p>
+            <p>Minocqua, Wisconsin & nearby</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h3>Services</h3>
+        <div class="grid services-grid">
+          <div class="service">
+            <h4>Gutter Cleaning</h4>
+            <p>Remove leaves, debris, and blockages so gutters and downspouts flow correctly and protect your home.</p>
+          </div>
+          <div class="service">
+            <h4>Window Washing</h4>
+            <p>Streak-free interior and exterior window cleaning for a clearer view year-round.</p>
+          </div>
+          <div class="service">
+            <h4>Downspout &amp; Minor Repairs</h4>
+            <p>Basic downspout clearing and small adjustments to ensure proper drainage (materials not included).</p>
+          </div>
+          <div class="service">
+            <h4>Seasonal Visits</h4>
+            <p>One-off or scheduled visits — spring/fall cleanups and pre-winter gutter preparation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h3>About Us</h3>
+        <p>Lakeview Window and Gutter Cleaners is a small family business based in Minocqua, Wisconsin. We focus on window and gutter care to keep your view as pristine as possible. We pride ourselves on reliability, attention to detail, and friendly local service.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-container">
+        <h3>Contact</h3>
+        <div class="contact-grid">
+          <div class="contact-left">
+            <p class="muted">Prefer phone or email?</p>
+            <p><strong>Call/Text:</strong> 802-730-0548</p>
+            <p><strong>Email:</strong> lakeviewcleaners@outlook.com</p>
+            <p><strong>Service area:</strong> Minocqua, WI</p>
+            <p class="muted small">We typically respond within 24 hours.</p>
+          </div>
+
+          <div class="contact-right">
+            <!-- FORM: using FormSubmit (replace email if you want). Visitors must confirm via the link FormSubmit sends the first time. -->
+            <form id="contactForm" class="contact-form" method="POST" action="https://formsubmit.co/lakeviewcleaners@outlook.com">
+              <!-- anti-spam honeypot -->
+              <input type="text" name="_honey" style="display:none">
+              <!-- disable captcha -->
+              <input type="hidden" name="_captcha" value="false">
+              <!-- optional: custom subject -->
+              <input type="hidden" name="_subject" value="Website Inquiry — Lakeview Cleaners">
+
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required>
+              </label>
+
+              <label>
+                Phone or Email
+                <input type="text" name="contact" placeholder="Phone or email" required>
+              </label>
+
+              <label>
+                Message
+                <textarea name="message" rows="4" placeholder="Tell us about your job, or ask a question..." required></textarea>
+              </label>
+
+              <div class="form-row">
+                <button type="submit" class="btn">Send Message</button>
+                <div id="formStatus" class="form-status" aria-live="polite"></div>
+              </div>
+            </form>
+
+            <p class="muted tiny">By sending a message you agree to be contacted by Lakeview Window and Gutter Cleaners. No spam — ever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Lakeview Window &amp; Gutter Cleaners — Minocqua, WI • <a href="mailto:lakeviewcleaners@outlook.com">lakeviewcleaners@outlook.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // AJAX form submission to FormSubmit, with minimal UI feedback
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = 'Sending…';
+      const data = new FormData(form);
+
+      // Use fetch to send to FormSubmit (they accept form POSTs; also support JSON)
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          status.textContent = 'Thanks — message sent. We will contact you shortly.';
+        } else {
+          return response.json().then(data => {
+            throw new Error(data?.message || 'There was a problem submitting the form.');
+          });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        status.textContent = 'Sorry — something went wrong. Please email lakeviewcleaners@outlook.com directly.';
+      });
+    });
+  </script>
+</body>
+</html>
